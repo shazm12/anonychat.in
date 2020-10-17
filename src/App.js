@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import 'firebase/analytics';
+
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -28,7 +28,6 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const firestone =firebase.firestore();
-const analytics = firebase.analytics();
 
 
 
@@ -61,7 +60,7 @@ function SignIn() {
   return(
     <section>
           <header className="header-text">
-            <h1>Anonychat📲😑</h1>
+            <h1>Anonychat</h1>
 
           </header>
           <button className="f6 grow no-underline br-pill ph4 pv3 mb2 mt4 dib white bg-hot-pink" onClick={signInWithGoogle}>Sign in with Google</button>
@@ -114,7 +113,7 @@ function ChatRoom() {
   return(
     <section className="main-body">
       <nav>
-        <h4 className="brand-name">Anonychat📲😑</h4>
+        <h4 className="brand-name">Anonychat</h4>
       </nav>
       <header className="heading">
         <SignOut/>
@@ -128,7 +127,7 @@ function ChatRoom() {
 
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-        <button type="submit" className="f6 link dim br3 ph4 pv2 mr2 dib white bg-light-purple"><span className="msg-sent-logo">🚀</span></button>
+        <button type="submit" className="f6 link dim br3 ph4 pv2 mr2 dib white bg-light-purple"><span role="img" aria-label="rocket-send">🚀</span></button>
       </form>
 
     </section>
