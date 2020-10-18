@@ -52,14 +52,14 @@ form {
   position: fixed;
   bottom: 0.5%;
   transition: all .5s;
-  margin-bottom: 0.5vh;
+  margin-bottom: 0.6vh;
 }
 
 
 form input {
   padding: 10px;
-  margin-bottom: 2px;
-  height: 25px;
+  margin-bottom: 4px;
+  height: 30px;
   background-color: #eee;
   width: 100%;
   border-radius: 4px 4px 4px 4px;
@@ -93,6 +93,7 @@ form button {
 .message-sent img {
   border-radius: 20px;
 }
+
 
 .message-sent p {
   padding: 25px;
@@ -128,6 +129,12 @@ form button {
   position: relative;
   margin-top: -15px;
 
+}
+.name-tag {
+  font-size: 0.8rem;
+  color: aliceblue;
+  justify-content: flex-start;
+  margin-top: -1px;
 }
 .heading {
   display: flex;
@@ -200,8 +207,18 @@ nav {
     margin-top: 2px;
     margin-bottom: 2px;
   }
+  .name-tag {
+    font-size: 0.6rem;
+    color: aliceblue;
+    justify-content: flex-start;
+    margin-top: -2.5vh;
+    margin-right: 4vh;
+  }
   form button {
     margin-right: 20px;
+  }
+  form input {
+    height: 25px;
   }
 
 }

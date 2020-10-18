@@ -60,7 +60,7 @@ function SignIn() {
   return(
     <section>
           <header className="header-text">
-            <h1>Anonychat</h1>
+            <h1>Anonychat<span role="img" aria-label="emojis-heading">😶📲</span></h1>
 
           </header>
           <button className="f6 grow no-underline br-pill ph4 pv3 mb2 mt4 dib white bg-hot-pink" onClick={signInWithGoogle}>Sign in with Google</button>
@@ -95,12 +95,14 @@ function ChatRoom() {
 
     e.preventDefault();
     
-    const {uid , photoURL} =auth.currentUser;
+    const {uid , photoURL, displayName} =auth.currentUser;
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
-      photoURL
+      photoURL,
+      displayName,
+      
     });
 
     setFormValue(' ');
@@ -113,7 +115,7 @@ function ChatRoom() {
   return(
     <section className="main-body">
       <nav>
-        <h4 className="brand-name">Anonychat</h4>
+        <h4 className="brand-name">Anonychat<span role="img" aria-label="emojis-heading">😶📲</span></h4>
       </nav>
       <header className="heading">
         <SignOut/>
@@ -127,7 +129,7 @@ function ChatRoom() {
 
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
-        <button type="submit" className="f6 link dim br3 ph4 pv2 mr2 dib white bg-light-purple"><span role="img" aria-label="rocket-send">🚀</span></button>
+        <button type="submit" className="f6 link dim br3 ph4 pv2 mr2 mb1 ml1 dib white bg-light-purple"><span role="img" aria-label="rocket-send">🚀</span></button>
       </form>
 
     </section>
@@ -137,7 +139,7 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  const {text,uid ,photoURL } = props.message;
+  const {text,uid ,photoURL,displayName } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved';
   const msgAnimation = uid === auth.currentUser.uid ? 'fade-left' : 'fade-right';
@@ -152,7 +154,10 @@ function ChatMessage(props) {
             <div class="ava pa4 tc">
               <img src={photoURL} class="h3 w3 dib" alt=""/>
             </div>
-            <p class="message-text1">{text}</p>
+            <p className="message-text1">{text}</p>
+          </div>
+          <div>
+            <h4 className="name-tag">{displayName}</h4>
           </div>
     </div>
 
