@@ -4,6 +4,13 @@ A **Real-time Chat** app that allows to have a group chat with your friends or a
 
 
 
+## **Installing all dependencies and making app ready to work and use in your device**
+1. Make a Firebase account and make necessary changes to use your Firestone database in the app.
+2.  Use npm update or npm install to install all dependencies required.
+3.  The app will be ready to use and run it using npm start.
+
+
+                                                                     
 
 
 
