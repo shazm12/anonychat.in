@@ -1,3 +1,15 @@
+# **AnonyChat**
+
+A **Real-time Chat** app that allows to have a group chat with your friends or any other person verified using it.It is made using React as framework and for backend, I used **Firebase with Firestone** as the database here.
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
